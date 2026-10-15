@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASRBMY Write</title>
+    <link>https://asrbmy.github.io/write/</link>
+    <description>A personal space for writing, research, ideas, and technical notes.</description>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <language>en</language>
+    <atom:link href="https://asrbmy.github.io/write/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Telegram Bookmark</title>
+      <link>https://asrbmy.github.io/write/articles/telegram-bookmark/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/telegram-bookmark/</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Tutorials</category>
+      <description>Telegram Bookmark Save any link, file, screenshot, page or video to your own Telegram group, sorted into topics.</description>
+    </item>
+    <item>
+      <title>A Tour of the Writing Features</title>
+      <link>https://asrbmy.github.io/write/articles/a-tour-of-the-writing-features/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/a-tour-of-the-writing-features/</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Tutorials</category>
+      <description>Diagrams, maths, videos, light and dark pictures, and glossary hints — everything you can put inside an article.</description>
+    </item>
+    <item>
+      <title>Building Better Software: Notes, Research &amp; Ideas</title>
+      <link>https://asrbmy.github.io/write/articles/building-better-software/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/building-better-software/</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Programming</category>
+      <description>A collection of practical notes, research findings, and ideas for building better software, improving workflows, and staying curious.</description>
+    </item>
+    <item>
+      <title>Setting Up a Local Development Environment</title>
+      <link>https://asrbmy.github.io/write/articles/setting-up-a-local-development-environment/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/setting-up-a-local-development-environment/</guid>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Programming</category>
+      <description>A small, repeatable setup beats a clever one. Here is how I get a new machine ready for development without losing an afternoon.</description>
+    </item>
+    <item>
+      <title>Understanding Git and GitHub</title>
+      <link>https://asrbmy.github.io/write/articles/understanding-git-and-github/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/understanding-git-and-github/</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Tutorials</category>
+      <description>Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.</description>
+    </item>
+    <item>
+      <title>Privacy-Focused Browsing Tips</title>
+      <link>https://asrbmy.github.io/write/articles/privacy-focused-browsing-tips/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/privacy-focused-browsing-tips/</guid>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Privacy</category>
+      <description>Seven low-effort habits that reduce how much of your browsing is tracked, without turning the web into a chore.</description>
+    </item>
+    <item>
+      <title>Learning Python: A Beginner's Guide</title>
+      <link>https://asrbmy.github.io/write/articles/learning-python-a-beginners-guide/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/learning-python-a-beginners-guide/</guid>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
+      <category>Tutorials</category>
+      <description>Variables, lists, loops and functions in one sitting, with small programs you can run and change.</description>
+    </item>
+    <item>
+      <title>How I Take Research Notes</title>
+      <link>https://asrbmy.github.io/write/articles/how-i-take-research-notes/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/how-i-take-research-notes/</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+      <category>Research</category>
+      <description>Plain Markdown files, one idea per note, and a weekly review. A note-taking system simple enough to keep using.</description>
+    </item>
+    <item>
+      <title>Reading Papers Without Drowning</title>
+      <link>https://asrbmy.github.io/write/articles/reading-papers-without-drowning/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/reading-papers-without-drowning/</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Research</category>
+      <description>A multi-pass approach to research papers that saves hours and helps you decide what deserves a close read.</description>
+    </item>
+    <item>
+      <title>On Writing in Public</title>
+      <link>https://asrbmy.github.io/write/articles/on-writing-in-public/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/on-writing-in-public/</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Personal</category>
+      <description>Why I publish half-finished thoughts, what it has taught me, and the small rules that keep it comfortable.</description>
+    </item>
+    <item>
+      <title>Threat Modelling for Everyday People</title>
+      <link>https://asrbmy.github.io/write/articles/threat-modelling-for-everyday-people/</link>
+      <guid isPermaLink="true">https://asrbmy.github.io/write/articles/threat-modelling-for-everyday-people/</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Privacy</category>
+      <description>Before you pick a privacy tool, work out what you are protecting and from whom. A simple set of questions does most of the work.</description>
+    </item>
+  </channel>
+</rss>

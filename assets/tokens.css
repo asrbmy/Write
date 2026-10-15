@@ -1,0 +1,70 @@
+/* Generated from site.config.js — do not edit. */
+:root {
+  --bg: #e9e8d9;
+  --grid-line: rgba(12, 48, 45, 0.07);
+  --grid-size: 28px;
+  --header-bg: #0c302d;
+  --header-text: #f4f0e3;
+  --header-muted: #a9c0b8;
+  --nav-bg: #0b2c29;
+  --nav-line: rgba(244, 240, 227, 0.12);
+  --accent: #b8431f;
+  --accent-strong: #9c3516;
+  --link: #0f5a4f;
+  --panel: #f6f2e4;
+  --panel-alt: #efead8;
+  --panel-border: #d3cfba;
+  --text: #1a2724;
+  --text-muted: #5a6663;
+  --side-bg: #0f3431;
+  --side-text: #e8ede6;
+  --side-muted: #9fb5ac;
+  --side-line: rgba(244, 240, 227, 0.14);
+  --code-bg: #0d2d2a;
+  --code-bar: #14403b;
+  --code-text: #e6ede7;
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --content-max: 1240px;
+  --col-main: 7fr;
+  --col-side: 3fr;
+  --gap: 40px;
+  --radius: 2px;
+  --font-head: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  --reading-size: 18px;
+  --reading-leading: 1.75;
+  --head-weight: 800;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --bg: #0a1b19;
+  --grid-line: rgba(244, 240, 227, 0.045);
+  --panel: #10231f;
+  --panel-alt: #14302b;
+  --panel-border: #244641;
+  --text: #e7eadf;
+  --text-muted: #9db2aa;
+  --link: #6fcbb7;
+  --accent: #e0693f;
+  --accent-strong: #f08058;
+  --side-bg: #0d2926;
+  --code-bg: #071a18;
+  --code-bar: #0f2d29;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1b19;
+  --grid-line: rgba(244, 240, 227, 0.045);
+  --panel: #10231f;
+  --panel-alt: #14302b;
+  --panel-border: #244641;
+  --text: #e7eadf;
+  --text-muted: #9db2aa;
+  --link: #6fcbb7;
+  --accent: #e0693f;
+  --accent-strong: #f08058;
+  --side-bg: #0d2926;
+  --code-bg: #071a18;
+  --code-bar: #0f2d29;
+}

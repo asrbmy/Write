@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Understanding Git and GitHub · ASRBMY Write</title>
+<meta name="description" content="Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="ASRBMY">
+<link rel="canonical" href="https://asrbmy.github.io/write/articles/understanding-git-and-github/">
+
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-wbD35AxdE8/rPEvBnxN6l5CxnaLQhXhyYhS6YaXFJHY='; style-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<link rel="alternate" hreflang="en" href="https://asrbmy.github.io/write/articles/understanding-git-and-github/">
+<link rel="alternate" hreflang="x-default" href="https://asrbmy.github.io/write/articles/understanding-git-and-github/">
+
+<meta name="theme-color" content="#0c302d">
+<meta property="og:site_name" content="ASRBMY Write">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Understanding Git and GitHub">
+<meta property="og:description" content="Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://asrbmy.github.io/write/articles/understanding-git-and-github/">
+<meta property="og:image" content="https://asrbmy.github.io/write/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ASRBMY Write — Notes, Research &amp; Ideas">
+<meta property="article:published_time" content="2026-09-21">
+<meta property="article:modified_time" content="2026-09-21">
+<meta property="article:section" content="Tutorials">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="tutorials">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Understanding Git and GitHub">
+<meta name="twitter:description" content="Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.">
+<meta name="twitter:image" content="https://asrbmy.github.io/write/og-default.png">
+
+<link rel="icon" type="image/svg+xml" href="/write/favicon.svg">
+<link rel="apple-touch-icon" href="/write/apple-touch-icon.png">
+<link rel="manifest" href="/write/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="ASRBMY Write" href="/write/rss.xml">
+<script>try{var t=localStorage.getItem('asrbmy-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="/write/assets/tokens.css?v=ee4ccd12">
+<link rel="stylesheet" href="/write/assets/theme.css?v=9535e613">
+<noscript><style>.navbar{display:block!important}.menu-btn{display:none!important}</style></noscript>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Understanding Git and GitHub","description":"Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.","datePublished":"2026-09-21","dateModified":"2026-09-21","author":{"@type":"Person","name":"ASRBMY","url":"https://asrbmy.github.io/write/authors/asrbmy/"},"inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://asrbmy.github.io/write/articles/understanding-git-and-github/"},"keywords":"git, github, tutorials","articleSection":"Tutorials","wordCount":295,"image":"https://asrbmy.github.io/write/og-default.png","isPartOf":{"@type":"CreativeWorkSeries","name":"Developer Basics","url":"https://asrbmy.github.io/write/series/developer-basics/"},"position":3,"publisher":{"@type":"Organization","name":"ASRBMY Write","logo":{"@type":"ImageObject","url":"https://asrbmy.github.io/write/icon-512.png"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://asrbmy.github.io/write/"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://asrbmy.github.io/write/writing/"},{"@type":"ListItem","position":3,"name":"Understanding Git and GitHub","item":"https://asrbmy.github.io/write/articles/understanding-git-and-github/"}]}]</script>
+</head>
+<body class="is-article has-side-toc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header__inner">
+    <a class="brand" href="/write/" aria-label="ASRBMY Write — home">
+      <span class="brand__mark"><img src="/write/logo.svg" alt="" width="40" height="40"></span>
+      <span class="brand__text"><span class="brand__name">ASRBMY Write</span><span class="brand__tag">Notes, Research &amp; Ideas</span></span>
+    </a>
+    <div class="header__actions">
+      <a class="btn-ghost" href="/write/search/">Search <svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn-ghost btn-ghost--accent" href="/write/font-tester/">Font Tester <svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch colour theme" aria-pressed="false"><svg class="icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M13.5 9.6A5.8 5.8 0 0 1 6.4 2.5a5.8 5.8 0 1 0 7.1 7.1Z" fill="currentColor"/></svg></button>
+      <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="navbar"><div class="wrap"><nav class="nav" id="site-nav" aria-label="Primary"><ul class="nav__list"><li class="nav__item"><a class="nav__link" href="/write/">Home</a></li>
+<li class="nav__item has-sub is-active"><a class="nav__link" href="/write/writing/" aria-current="page">Articles</a>
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="sub-1" aria-label="Toggle Articles submenu"><span class="nav__sign" aria-hidden="true"></span></button>
+      <ul class="nav__sub" id="sub-1"><li><a href="/write/writing/">All Articles</a></li><li><a href="/write/tags/">Tags</a></li><li><a href="/write/search/">Search</a></li></ul></li>
+<li class="nav__item has-sub"><a class="nav__link" href="/write/categories/">Topics</a>
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="sub-2" aria-label="Toggle Topics submenu"><span class="nav__sign" aria-hidden="true"></span></button>
+      <ul class="nav__sub" id="sub-2"><li><a href="/write/categories/tutorials/">Tutorials</a></li><li><a href="/write/categories/privacy/">Privacy</a></li><li><a href="/write/categories/programming/">Programming</a></li><li><a href="/write/categories/research/">Research</a></li><li><a href="/write/categories/personal/">Personal</a></li></ul></li>
+<li class="nav__item"><a class="nav__link" href="/write/categories/tutorials/">Tutorials</a></li>
+<li class="nav__item"><a class="nav__link" href="/write/categories/research/">Research</a></li>
+<li class="nav__item"><a class="nav__link" href="/write/projects/">Projects</a></li>
+<li class="nav__item"><a class="nav__link" href="/write/about/">About</a></li>
+<li class="nav__item"><a class="nav__link" href="/write/archive/">Archive</a></li></ul></nav></div></div>
+<div class="read-progress" id="read-progress" aria-hidden="true"><span></span></div>
+<div class="stage"><div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/write/">Home</a></li><li><a href="/write/writing/">Writing</a></li><li aria-current="page">Understanding Git and GitHub</li></ol></nav>
+<div class="layout">
+<main id="main" class="main" tabindex="-1">
+<article class="panel panel--top article">
+  <header class="panel__head">
+    <p class="kicker"><a href="/write/categories/tutorials/">Tutorials</a></p>
+    <h1 class="title">Understanding Git and GitHub</h1>
+    
+    <p class="lede">Git tracks your changes on your own computer; GitHub is a place to share them. A short, practical tour of the everyday workflow.</p>
+    
+    <div class="byline">
+      <span class="byline__item"><a href="/write/authors/asrbmy/" rel="author">ASRBMY</a></span>
+      <span class="byline__item"><time datetime="2026-09-21">Sep 21, 2026</time></span>
+      <span class="byline__item">1 min read</span>
+      
+      <ul class="tags"><li><a href="/write/tags/git/">git</a></li><li><a href="/write/tags/github/">github</a></li><li><a href="/write/tags/tutorials/">tutorials</a></li></ul>
+    </div>
+  </header>
+  <hr class="rule">
+  <details class="series" id="series-box" open>
+    <summary><span class="series__label">Series · Part 3 of 3</span><a class="series__name" href="/write/series/developer-basics/">Developer Basics</a></summary>
+    <ol class="series__list"><li><a href="/write/articles/setting-up-a-local-development-environment/">Setting Up a Local Development Environment</a></li><li><a href="/write/articles/learning-python-a-beginners-guide/">Learning Python: A Beginner's Guide</a></li><li aria-current="page"><span>Understanding Git and GitHub</span></li></ol>
+    <p class="series__nav"><a rel="prev" href="/write/articles/learning-python-a-beginners-guide/">← Previous part</a></p>
+  </details>
+  <details class="toc" open><summary>Table of Contents</summary><ol class="toc__list"><li class="toc__d2"><a href="#git-versus-github">Git versus GitHub</a></li><li class="toc__d2"><a href="#the-everyday-loop">The everyday loop</a></li><li class="toc__d2"><a href="#branches">Branches</a></li><li class="toc__d2"><a href="#pull-requests">Pull requests</a></li><li class="toc__d2"><a href="#commands-worth-memorising">Commands worth memorising</a></li><li class="toc__d2"><a href="#next-steps">Next steps</a></li></ol></details>
+  <div class="prose"><p>People often use &quot;<a class="gloss" href="/write/glossary/#g-git" data-def="A tool that records every change to a set of files, so you can go back to any earlier version and work with other people without overwriting each other.">Git<span class="sr-only"> (definition: A tool that records every change to a set of files, so you can go back to any earlier version and work with other people without overwriting each other.)</span></a>&quot; and &quot;GitHub&quot; as if they were the same thing. They are not, and knowing the difference makes everything else easier.</p>
+<h2 id="git-versus-github">Git versus GitHub<a class="anchor" href="#git-versus-github" aria-label="Link to this section">#</a></h2>
+<p><strong>Git</strong> is a version control tool that runs on your computer. It records snapshots of your project, called commits, so you can see what changed, when, and why.</p>
+<p><strong>GitHub</strong> is a website that hosts Git repositories. It adds collaboration features on top: pull requests, issues, and hosting such as GitHub Pages.</p>
+<h2 id="the-everyday-loop">The everyday loop<a class="anchor" href="#the-everyday-loop" aria-label="Link to this section">#</a></h2>
+<p>Most days you will repeat the same small cycle.</p>
+<div class="code-block"><div class="code-block__bar"><span class="code-block__lang">bash</span><button type="button" class="code-copy" aria-label="Copy bash code to clipboard"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" d="M5.5 5.5h7v8h-7zM3.5 10.5v-8h7"/></svg><span class="code-copy__label">Copy</span></button></div><pre><code class="hljs language-bash">git status                      <span class="hljs-comment"># what has changed?</span>
+git add notes.md                <span class="hljs-comment"># stage the change</span>
+git commit -m <span class="hljs-string">&quot;Add notes on caching&quot;</span>
+git push                        <span class="hljs-comment"># send it to GitHub</span></code></pre></div>
+<p>Check <code>git status</code> often; it tells you exactly what Git thinks is going on.</p>
+<h2 id="branches">Branches<a class="anchor" href="#branches" aria-label="Link to this section">#</a></h2>
+<p>A branch is a separate line of work. Create one for each idea so the main branch always stays in a working state.</p>
+<div class="code-block"><div class="code-block__bar"><span class="code-block__lang">bash</span><button type="button" class="code-copy" aria-label="Copy bash code to clipboard"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.3" d="M5.5 5.5h7v8h-7zM3.5 10.5v-8h7"/></svg><span class="code-copy__label">Copy</span></button></div><pre><code class="hljs language-bash">git switch -c fix-typo-in-readme
+<span class="hljs-comment"># …edit files, commit…</span>
+git push -u origin fix-typo-in-readme</code></pre></div>
+<h2 id="pull-requests">Pull requests<a class="anchor" href="#pull-requests" aria-label="Link to this section">#</a></h2>
+<p>When a branch is ready, open a pull request on GitHub. It shows the difference, lets others comment, and merges the change when everyone is happy. Even on solo projects, reading your own pull request before merging catches surprising mistakes.</p>
+<h2 id="commands-worth-memorising">Commands worth memorising<a class="anchor" href="#commands-worth-memorising" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git clone &lt;url&gt;</code></td>
+<td>Copy a <a class="gloss" href="/write/glossary/#g-repository" data-def="A project folder tracked by Git, usually hosted on a service such as GitHub.">repository<span class="sr-only"> (definition: A project folder tracked by Git, usually hosted on a service such as GitHub.)</span></a> to your computer</td>
+</tr>
+<tr>
+<td><code>git log --oneline</code></td>
+<td>Show a compact history</td>
+</tr>
+<tr>
+<td><code>git diff</code></td>
+<td>Show unstaged changes</td>
+</tr>
+<tr>
+<td><code>git restore &lt;file&gt;</code></td>
+<td>Discard changes in a file</td>
+</tr>
+<tr>
+<td><code>git pull</code></td>
+<td>Fetch and merge the latest changes</td>
+</tr>
+</tbody></table></div>
+<h2 id="next-steps">Next steps<a class="anchor" href="#next-steps" aria-label="Link to this section">#</a></h2>
+<p>Once the loop feels natural, learn how to resolve a merge conflict and how to write a clear commit message. Those two skills cover most of the real-world friction.</p>
+</div>
+  <div class="share" data-url="https://asrbmy.github.io/write/articles/understanding-git-and-github/" data-title="Understanding Git and GitHub" role="group" aria-label="Share, save or print this article">
+  <button type="button" class="share__btn" data-copy><svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M6.500 9.500a3 3 0 0 0 4.200 0l2.300-2.300a3 3 0 0 0-4.200-4.200L7.700 4.100M9.500 6.500a3 3 0 0 0-4.200 0L3 8.800a3 3 0 0 0 4.200 4.200l1.100-1.100" fill="none" stroke="currentColor" stroke-width="1.400" stroke-linecap="round"/></svg> Copy link</button>
+  <button type="button" class="share__btn" data-native hidden><svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M8 10V2M5 5l3-3 3 3M3 9v4.500h10V9" fill="none" stroke="currentColor" stroke-width="1.400" stroke-linecap="round" stroke-linejoin="round"/></svg> Share…</button>
+  <a class="share__btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fasrbmy.github.io%2Fwrite%2Farticles%2Funderstanding-git-and-github%2F&amp;text=Understanding%20Git%20and%20GitHub" rel="noopener noreferrer" target="_blank">X</a>
+  <a class="share__btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fasrbmy.github.io%2Fwrite%2Farticles%2Funderstanding-git-and-github%2F" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+  <a class="share__btn" href="https://wa.me/?text=Understanding%20Git%20and%20GitHub%20https%3A%2F%2Fasrbmy.github.io%2Fwrite%2Farticles%2Funderstanding-git-and-github%2F" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+  <a class="share__btn" href="mailto:?subject=Understanding%20Git%20and%20GitHub&amp;body=https%3A%2F%2Fasrbmy.github.io%2Fwrite%2Farticles%2Funderstanding-git-and-github%2F" rel="noopener noreferrer">Email</a>
+  <button type="button" class="share__btn" data-bookmark aria-pressed="false"><svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.500 1.500h9v13L8 11l-4.500 3.500z" fill="none" stroke="currentColor" stroke-width="1.400" stroke-linejoin="round"/></svg> <span>Save for later</span></button>
+  <button type="button" class="share__btn" data-print><svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M4 6V1.500h8V6M4 11.500H1.500V6h13v5.500H12M4 9.500h8v5H4z" fill="none" stroke="currentColor" stroke-width="1.300" stroke-linejoin="round"/></svg> Print / PDF</button>
+  <span class="share__status" role="status" aria-live="polite"></span>
+</div>
+  
+  
+  <aside class="related" aria-labelledby="h-related"><h2 id="h-related">Related Articles</h2><ul><li><a href="/write/articles/telegram-bookmark/">Telegram Bookmark</a><span>Tutorials · 16 min read</span></li><li><a href="/write/articles/a-tour-of-the-writing-features/">A Tour of the Writing Features</a><span>Tutorials · 1 min read</span></li><li><a href="/write/articles/learning-python-a-beginners-guide/">Learning Python: A Beginner's Guide</a><span>Tutorials · 1 min read</span></li></ul></aside>
+  <nav class="prevnext" aria-label="More articles">
+    <a class="prevnext__item" rel="prev" href="/write/articles/privacy-focused-browsing-tips/"><small>← Older</small><span>Privacy-Focused Browsing Tips</span></a>
+    <a class="prevnext__item prevnext__item--next" rel="next" href="/write/articles/setting-up-a-local-development-environment/"><small>Newer →</small><span>Setting Up a Local Development Environment</span></a>
+  </nav>
+</article>
+</main>
+<aside class="sidebar" aria-label="Sidebar">
+    <nav class="side-toc" id="toc-side" aria-labelledby="h-toc-side"><h2 class="side-title" id="h-toc-side">On this page</h2><ol><li class="toc__d2"><a href="#git-versus-github">Git versus GitHub</a></li><li class="toc__d2"><a href="#the-everyday-loop">The everyday loop</a></li><li class="toc__d2"><a href="#branches">Branches</a></li><li class="toc__d2"><a href="#pull-requests">Pull requests</a></li><li class="toc__d2"><a href="#commands-worth-memorising">Commands worth memorising</a></li><li class="toc__d2"><a href="#next-steps">Next steps</a></li></ol></nav>
+  <section class="side-block">
+    <h2 class="side-title">Search Articles</h2>
+    <form class="side-search" role="search" action="/write/search/" method="get">
+      <label class="sr-only" for="side-q">Search articles</label>
+      <input id="side-q" name="q" type="search" placeholder="Search…" autocomplete="off">
+      <button type="submit" aria-label="Search"><svg class="icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path d="M7 12.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11Zm4-1.5 3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </form>
+  </section>
+  <section class="side-feature side-promo">
+    <h2>Follow the Writing</h2>
+    <p class="side-promo__tag">New notes, straight to your reader.</p>
+    <p>Subscribe with any RSS reader to get each new article. No account, no tracking.</p>
+    <a class="btn-light" href="/write/rss.xml">Subscribe via RSS</a>
+    <p class="side-promo__note">Free and open. Unsubscribe by removing the feed.</p>
+  </section>
+  <section class="side-start">
+    <h2 class="side-title">Start Here</h2>
+    <p>New to the site? Browse the writing by topic, or read it all in date order.</p>
+    <a class="btn-dark" href="/write/archive/">Browse the archive</a>
+  </section>
+  
+  <section class="side-block">
+    <p class="side-label">Site tools</p>
+    <h2 class="side-title side-title--lg">Writing Tools</h2>
+    <ul class="side-tools"><li><a href="/write/search/"><span class="side-tools__text"><strong>Article Search</strong><small>Find anything by title or text</small></span><span class="badge">Tool</span></a></li><li><a href="/write/font-tester/"><span class="side-tools__text"><strong>Font Tester</strong><small>Try fonts and reading styles</small></span><span class="badge">Tool</span></a></li><li><a href="/write/tags/"><span class="side-tools__text"><strong>Tag Explorer</strong><small>Browse the smaller topics</small></span><span class="badge">Tool</span></a></li><li><a href="/write/glossary/"><span class="side-tools__text"><strong>Glossary</strong><small>Plain-language definitions</small></span><span class="badge">Tool</span></a></li><li><a href="/write/bookmarks/"><span class="side-tools__text"><strong>Reading List</strong><small>Articles you saved for later</small></span><span class="badge">Tool</span></a></li></ul>
+  </section>
+  <section class="side-block">
+    <h2 class="side-title">Best of</h2>
+    <ul class="side-recent"><li><a href="/write/articles/a-tour-of-the-writing-features/">A Tour of the Writing Features</a><span class="side-recent__meta">Tutorials · 1 min</span></li><li><a href="/write/articles/understanding-git-and-github/">Understanding Git and GitHub</a><span class="side-recent__meta">Tutorials · 1 min</span></li><li><a href="/write/articles/reading-papers-without-drowning/">Reading Papers Without Drowning</a><span class="side-recent__meta">Research · 1 min</span></li><li><a href="/write/articles/threat-modelling-for-everyday-people/">Threat Modelling for Everyday People</a><span class="side-recent__meta">Privacy · 1 min</span></li></ul>
+    <p class="more"><a href="/write/best/">See all <svg class="icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </section>
+  
+  <section class="side-block">
+    <h2 class="side-title side-title--lg">Downloads</h2>
+    <ul class="side-links side-links--plain"><li><a href="/write/rss.xml">RSS Feed</a></li><li><a href="/write/sitemap.xml">Sitemap</a></li></ul>
+  </section>
+  <section class="side-block">
+    <h2 class="side-title side-title--lg">Browse by Topic</h2>
+    <ul class="side-links side-links--count">
+      <li><a href="/write/writing/"><span>All Articles</span><span class="count">11</span></a></li>
+      <li><a href="/write/categories/tutorials/"><span>Tutorials</span><span class="count">4</span></a></li>
+      <li><a href="/write/categories/privacy/"><span>Privacy</span><span class="count">2</span></a></li>
+      <li><a href="/write/categories/programming/"><span>Programming</span><span class="count">2</span></a></li>
+      <li><a href="/write/categories/research/"><span>Research</span><span class="count">2</span></a></li>
+      <li><a href="/write/categories/personal/"><span>Personal</span><span class="count">1</span></a></li>
+    </ul>
+  </section>
+  <section class="side-block">
+    <h2 class="side-title">Recent Articles</h2>
+    <ul class="side-recent">
+      <li><a href="/write/articles/telegram-bookmark/">Telegram Bookmark</a><span class="side-recent__meta">Oct 15, 2026 · 16 min</span></li>
+      <li><a href="/write/articles/a-tour-of-the-writing-features/">A Tour of the Writing Features</a><span class="side-recent__meta">Oct 12, 2026 · 1 min</span></li>
+      <li><a href="/write/articles/building-better-software/">Building Better Software: Notes, Research &amp; Ideas</a><span class="side-recent__meta">Oct 8, 2026 · 2 min</span></li>
+      <li><a href="/write/articles/setting-up-a-local-development-environment/">Setting Up a Local Development Environment</a><span class="side-recent__meta">Sep 30, 2026 · 1 min</span></li>
+      <li><a href="/write/articles/understanding-git-and-github/">Understanding Git and GitHub</a><span class="side-recent__meta">Sep 21, 2026 · 1 min</span></li>
+    </ul>
+  </section>
+  <figure class="side-quote"><blockquote><p>Small steps, consistent effort, and a curious mind can take you a long way.</p></blockquote><figcaption>— ASRBMY</figcaption></figure>
+</aside>
+</div>
+</div></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <a class="brand brand--footer" href="/write/"><span class="brand__mark"><img src="/write/logo.svg" alt="" width="36" height="36"></span><span class="brand__text"><span class="brand__name">ASRBMY Write</span><span class="brand__tag">Notes, Research &amp; Ideas</span></span></a>
+      <nav aria-label="Footer"><ul class="footer__links"><li><a href="/write/">Home</a></li><li><a href="/write/writing/">Writing</a></li><li><a href="/write/categories/">Categories</a></li><li><a href="/write/about/">About</a></li><li><a href="/write/archive/">Archive</a></li><li><a href="/write/contact/">Contact</a></li><li><a href="/write/best/">Best of</a></li><li><a href="/write/glossary/">Glossary</a></li><li><a href="/write/bookmarks/">Reading list</a></li></ul></nav>
+      <div class="footer__social"><a href="/write/rss.xml" aria-label="RSS"><svg class="icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M2 2.500a11.500 11.500 0 0 1 11.500 11.500M2 7a7 7 0 0 1 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="3" cy="13" r="1.4" fill="currentColor"/></svg></a><a href="https://github.com/write" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><svg class="icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 <strong>ASRBMY Write</strong>. All rights reserved.</p>
+      <ul><li><a href="/write/privacy/">Privacy</a></li><li><a href="/write/terms/">Terms</a></li><li><a href="/write/changelog/">Changelog</a></li><li><a href="/write/sitemap.xml">Sitemap</a></li></ul>
+    </div>
+  </div>
+</footer>
+<script src="/write/assets/site.js?v=d9ed9024" defer></script>
+
+</body>
+</html>
